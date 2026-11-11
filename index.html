@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prof. Kramer Gibson · Berklee courses</title>
+<meta name="description" content="Every course Kramer Gibson teaches at Berklee College of Music, in one place." />
+<style>
+  :root { --bg: #0d0d0d; --ink: #f2efe8; --mute: rgba(242,239,232,.58); --line: rgba(242,239,232,.14); --accent: #ff5a36; --ease: cubic-bezier(.22,1,.36,1); }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.5; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  .backdrop { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity .7s var(--ease); }
+  .backdrop img { width: 100%; height: 100%; object-fit: cover; object-position: top; filter: saturate(.9) brightness(.2) blur(1px); }
+  .backdrop.on { opacity: 1; }
+  main, footer { position: relative; z-index: 1; }
+
+  main { padding: clamp(60px, 14vh, 150px) clamp(18px, 4vw, 48px) 40px; max-width: 1200px; }
+  .eyebrow { font-size: 12px; letter-spacing: .32em; text-transform: uppercase; color: var(--accent); margin-bottom: 26px; transition: color 1.2s var(--ease); }
+  h1 { font-weight: 500; font-size: clamp(48px, 10vw, 140px); line-height: .95; letter-spacing: -.035em; margin: 0 0 28px; }
+  .lede { max-width: 560px; font-size: clamp(16px, 1.4vw, 19px); color: var(--mute); margin: 0 0 64px; }
+
+  .doors { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .doors li { border-bottom: 1px solid var(--line); }
+  .door { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 6px 24px; padding: 26px 0; transition: padding .45s var(--ease), color .4s var(--ease); }
+  .door img { display: none; }
+  .code { font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--c); }
+  .name { display: block; font-size: clamp(32px, 5.4vw, 76px); font-weight: 500; letter-spacing: -.03em; line-height: 1.02; margin: 6px 0 8px; }
+  .what { display: block; color: var(--mute); max-width: 620px; font-size: clamp(15px, 1.2vw, 17px); }
+  .arrow { font-size: clamp(30px, 4vw, 54px); color: var(--mute); transition: transform .45s var(--ease), color .3s; }
+  .door:hover, .door:focus-visible { padding-left: 14px; color: var(--c); outline: none; }
+  .door:hover .arrow, .door:focus-visible .arrow { color: var(--c); transform: translateX(8px); }
+
+  .also { margin-top: 70px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px; }
+  .also h2 { grid-column: 1 / -1; margin: 0; font-weight: 400; font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--mute); }
+  .small { display: grid; grid-template-columns: 112px 1fr; gap: 16px; align-items: center; }
+  .small img { width: 112px; height: 70px; object-fit: cover; object-position: top; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--line); }
+  .small .code { display: block; margin-bottom: 4px; }
+  .small .t { font-size: 20px; letter-spacing: -.01em; line-height: 1.2; transition: color .3s; }
+  .small:hover .t, .small:focus-visible .t { color: var(--c); }
+  .small:focus-visible { outline: none; }
+
+  footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 60px clamp(18px, 4vw, 48px); margin-top: 90px; border-top: 1px solid var(--line); font-size: 13px; color: var(--mute); letter-spacing: .06em; }
+
+  .rise { opacity: 0; transform: translateY(16px); animation: rise .9s var(--ease) forwards; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  @media (hover: none), (max-width: 720px) {
+    .backdrop { display: none; }
+    .door { grid-template-columns: 96px minmax(0, 1fr); gap: 4px 16px; padding: 20px 0; }
+    .door img { display: block; width: 96px; height: 96px; object-fit: cover; object-position: top left; border-radius: 6px; grid-row: span 1; }
+    .arrow { display: none; }
+    .what { font-size: 14px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+    .rise { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="backdrop" aria-hidden="true"><img alt="" /></div>
+
+<main>
+  <div class="eyebrow rise">Berklee College of Music · Prof. Kramer Gibson</div>
+  <h1 class="rise" style="animation-delay:.08s">Pick your class.</h1>
+  <p class="lede rise" style="animation-delay:.16s">Every course I teach, in one place. Tap yours and you land on its site, with this week's slides, handouts, and tools.</p>
+
+  <ol class="doors">
+    <li class="rise" style="animation-delay:.24s"><a class="door" href="https://kramermusician.github.io/lens101/" data-img="img/lens101.jpg" style="--c:#ff5a36">
+      <img src="img/lens101.jpg" alt="" />
+      <span><span class="code">LENS 101</span><span class="name">Engaging with the Artistic Space</span><span class="what">Animation, art tools you can open in a browser, Blender, Cavalry, and the 12-bar blues.</span></span>
+      <span class="arrow" aria-hidden="true">&rsaquo;</span></a></li>
+    <li class="rise" style="animation-delay:.32s"><a class="door" href="https://kramermusician.github.io/berklee-esl/esl1/" data-img="img/esl1.jpg" style="--c:#3bb6e3">
+      <img src="img/esl1.jpg" alt="" />
+      <span><span class="code">ESL1</span><span class="name">Foundations</span><span class="what">The sentence, the paragraph, and the confidence to say it out loud.</span></span>
+      <span class="arrow" aria-hidden="true">&rsaquo;</span></a></li>
+    <li class="rise" style="animation-delay:.40s"><a class="door" href="https://kramermusician.github.io/berklee-esl/esl3/" data-img="img/esl3.jpg" style="--c:#7be0b0">
+      <img src="img/esl3.jpg" alt="" />
+      <span><span class="code">ESL3</span><span class="name">Advanced</span><span class="what">Sharper grammar, longer writing, and songs pulled apart line by line.</span></span>
+      <span class="arrow" aria-hidden="true">&rsaquo;</span></a></li>
+    <li class="rise" style="animation-delay:.48s"><a class="door" href="https://kramermusician.github.io/lhum400/" data-img="img/lhum400.jpg" style="--c:#f5a623">
+      <img src="img/lhum400.jpg" alt="" />
+      <span><span class="code">LHUM400</span><span class="name">Professional Habits</span><span class="what">Career tools: the résumé builder, your hire-me website, and the weekly class decks.</span></span>
+      <span class="arrow" aria-hidden="true">&rsaquo;</span></a></li>
+  </ol>
+
+  <section class="also" aria-label="Also">
+    <h2>Also</h2>
+    <a class="small" href="https://kramermusician.github.io/daily-graphs/" data-img="img/daily-graphs.jpg" style="--c:#c9a7ff">
+      <img src="img/daily-graphs.jpg" alt="" />
+      <span><span class="code">Every class</span><span class="t">Daily Graphs, the graphs from class</span></span></a>
+    <a class="small" href="https://kramermusician.github.io/berklee-esl/" data-img="img/esl1.jpg" style="--c:#3bb6e3">
+      <img src="img/esl3.jpg" alt="" />
+      <span><span class="code">ESL1 + ESL3</span><span class="t">ESL home: song study, news, and tools for both levels</span></span></a>
+    <a class="small" href="https://kramermusician.github.io/esl1-summer-2026/" data-img="img/esl1-summer.jpg" style="--c:#8a8f98">
+      <img src="img/esl1-summer.jpg" alt="" />
+      <span><span class="code">Archive</span><span class="t">ESL1, Summer 2026</span></span></a>
+  </section>
+</main>
+
+<footer>
+  <div>Prof. Kramer Gibson · Liberal Arts and Sciences</div>
+  <div>Berklee College of Music</div>
+</footer>
+
+<script>
+// Point at a course and its site fills the screen behind the page; the eyebrow takes its color.
+(function () {
+  if (!matchMedia('(hover: hover) and (min-width: 721px)').matches) return;
+  const bd = document.querySelector('.backdrop'), img = bd.querySelector('img'), root = document.documentElement;
+  let t;
+  document.querySelectorAll('[data-img]').forEach(a => {
+    const show = () => { clearTimeout(t); if (img.getAttribute('src') !== a.dataset.img) img.src = a.dataset.img; bd.classList.add('on'); root.style.setProperty('--accent', a.style.getPropertyValue('--c')); };
+    const hide = () => { t = setTimeout(() => bd.classList.remove('on'), 120); };
+    a.addEventListener('mouseenter', show); a.addEventListener('focus', show);
+    a.addEventListener('mouseleave', hide); a.addEventListener('blur', hide);
+  });
+})();
+</script>
+</body>
+</html>
